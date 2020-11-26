@@ -5,4 +5,20 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :timeoutable
   
   has_many :records
+  belongs_to :role, optional: true
+  
+  validates :username, presence: true
+
+  
+  def assign_role
+    self.role = Role.find_by name: 'general' if role.nil?
+  end
+
+  def admin?
+    role.name == 'admin'
+  end
+
+  def general?
+    role.name == 'general'
+  end
 end

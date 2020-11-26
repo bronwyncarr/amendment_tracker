@@ -1,24 +1,33 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Purpose
 
-Things you may want to cover:
+This app was created to assist a client who was amending manuals and needed a way to keep track of the amendments.
+The brief specified the data that was to be tracked and find a way to highlight manuals where amendments had been approved but not incorporated. 
 
-* Ruby version
+## Deployment
 
-* System dependencies
+This app is currently deployed at <http://om-amend.herokuapp.com/>
 
-* Configuration
+## :books: Installation and Setup (R10)
 
-* Database creation
+1. Install ruby, I recommend using [asdf.](https://asdf-vm.com/)
 
-* Database initialization
+1. Install git if you don't already have it. Go to the [official docs](https://git-scm.com/downloads) for more information.
 
-* How to run the test suite
+1. Git clone the app to your home directory:
 
-* Services (job queues, cache servers, search engines, etc.)
+    ```bash
+    git clone https://github.com/bronwyncarr/records.git
+    ```
 
-* Deployment instructions
+1. Run bundle install to ensure you have the required dependancies.
 
-* ...
+## Teck Stack
+
+This app uses:
+- **Ruby on Rails**
+- **PostgreSQL** as the database
+- **Bootstrap** for styling
+- **Simple Form** for form inputs
+- **Devise** for authentication
