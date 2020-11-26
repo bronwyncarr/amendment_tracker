@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
     def layout_for_resource
       if devise_controller?
-        'page'
+        'devise'
       else
         'application'
       end
