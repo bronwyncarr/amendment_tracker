@@ -13,7 +13,7 @@ Manual.create({name: "OM-E"})
 Role.create({name: "general"})
 Role.create({name: "admin"})
 
-User.create({username: 'pilot', email: 'a@test.com', password: '123456', password_confirmation: '123456', role: 'general'})
-User.create({username: 'admin', email: 'b@test.com', password: '123456', password_confirmation: '123456', role: 'admin'})
+User.create({username: 'pilot', email: 'a@test.com', password: '123456', password_confirmation: '123456', role_id: 1})
+User.create({username: 'admin', email: 'b@test.com', password: '123456', password_confirmation: '123456', role_id: 2})
 
 Record.create(document_ref: '1a', text: "cut and pasted from doc", error: 'it is wrong', comment: 'it should include aeroplanes', revision: 'it should be this', approved: false, incorporated: false, user_id: 1, manual_id: 1)
