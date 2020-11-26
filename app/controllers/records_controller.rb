@@ -10,6 +10,10 @@ class RecordsController < ApplicationController
   def show
   end
 
+  def pending
+    @pending_records = Record.where(approved: true, incorporated: false)
+  end
+
   def new
     @record = Record.new
   end

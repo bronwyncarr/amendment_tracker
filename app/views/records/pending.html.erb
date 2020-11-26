@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Pending', pending_path %>
+<%= link_to 'All records', records_path %>
 
 <h1>Records</h1>
 
@@ -18,7 +18,7 @@
   </thead>
 
   <tbody>
-    <% @records.each do |record| %>
+    <% @pending_records.each do |record| %>
       <tr>
         <td><%= record.document_ref %></td>
         <td><%= record.manual.name %></td>
