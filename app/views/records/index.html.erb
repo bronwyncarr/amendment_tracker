@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Document ref</th>
+      <%# <th>Manual</th> %>
       <th>Text</th>
       <th>Error</th>
       <th>Comment</th>
@@ -20,6 +21,7 @@
     <% @records.each do |record| %>
       <tr>
         <td><%= record.document_ref %></td>
+        <%# <td><%= record.manual_id %></td> %>
         <td><%= record.text %></td>
         <td><%= record.error %></td>
         <td><%= record.comment %></td>
