@@ -47,3 +47,7 @@
 <br>
 
 <%= link_to 'New Record', new_record_path %>
+
+<% if can? :manage, :all %>
+  <%= link_to "Admin Dashboard", "admin", class: "btn"%> 
+<% end %>
