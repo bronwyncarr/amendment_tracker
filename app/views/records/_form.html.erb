@@ -1,52 +1,15 @@
-<%= form_with(model: record, local: true) do |form| %>
-  <% if record.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(record.errors.count, "error") %> prohibited this record from being saved:</h2>
-
-      <ul>
-        <% record.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :document_ref %>
-    <%= form.text_field :document_ref %>
-  </div>
-
-  <div class="field">
-    <%= form.label :text %>
-    <%= form.text_area :text %>
-  </div>
-
-  <div class="field">
-    <%= form.label :error %>
-    <%= form.text_field :error %>
-  </div>
-
-  <div class="field">
-    <%= form.label :comment %>
-    <%= form.text_area :comment %>
-  </div>
-
-  <div class="field">
-    <%= form.label :revision %>
-    <%= form.text_area :revision %>
-  </div>
-
-  <div class="field">
-    <%= form.label :approved %>
-    <%= form.check_box :approved %>
-  </div>
-
-  <div class="field">
-    <%= form.label :incorporated %>
-    <%= form.check_box :incorporated %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+<%= simple_form_for @record do |f| %>
+<%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="form-inputs">
+    <%= f.input :document_ref %>
+    <%= f.association :manual %>
+    <%= f.input :text %>
+    <%= f.input :error %>
+    <%= f.input :comment %>
+    <%= f.input :revision %>
+    <%= f.input :approved %>
+    <%= f.input :incorporated %>
+    <%= f.button :submit %>
   </div>
 <% end %>
