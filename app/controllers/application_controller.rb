@@ -8,6 +8,14 @@ class ApplicationController < ActionController::Base
     # end
 
     protected
+
+    def layout_for_resource
+      if devise_controller?
+        'page'
+      else
+        'application'
+      end
+    end
   
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
