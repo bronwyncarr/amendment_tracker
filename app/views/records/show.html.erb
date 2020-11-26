@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong>Manual:</strong>
+  <%= @record.manual.name %>
+</p>
+
+<p>
   <strong>Text:</strong>
   <%= @record.text %>
 </p>
@@ -27,12 +32,20 @@
 
 <p>
   <strong>Approved:</strong>
-  <%= @record.approved %>
+  <% if @record.approved? %>
+    Yes
+  <% else %>
+    No
+  <% end %>
 </p>
 
 <p>
   <strong>Incorporated:</strong>
-  <%= @record.incorporated %>
+  <% if @record.incorporated? %></td>
+    Yes
+  <% else %>
+    No
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_record_path(@record) %> |
