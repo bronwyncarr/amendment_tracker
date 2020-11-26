@@ -1,11 +1,10 @@
-<p id="notice"><%= notice %></p>
+<h1 class="text-center m-5">Records</h1>
 
-<%= link_to 'Pending', pending_path %>
-
-<h1>Records</h1>
-
+<%= link_to 'New Record', new_record_path, class: "btn btn-info" %>
+<br>
+<br>
 <table class="table">
-  <thead class="thead-dark">
+  <thead class="thead-light">
     <tr>
       <th>Document Refence</th>
       <th>Manual</th>
@@ -30,24 +29,16 @@
           No
           <% end %>
         </td>
-        <td><% if record.incorporated? %></td>
+        <td><% if record.incorporated? %>
             Yes
           <% else %>
             No
           <% end %>
         </td>
-        <td><%= link_to 'Show', record %></td>
+        <td><%= link_to 'Details', record %></td>
         <td><%= link_to 'Edit', edit_record_path(record) %></td>
-        <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Record', new_record_path %>
-
-<% if can? :manage, :all %>
-  <%= link_to "Admin Dashboard", "admin", class: "btn"%> 
-<% end %>

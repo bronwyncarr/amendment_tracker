@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<h1 class="text-center m-5">Details</h1>
 
 <p>
   <strong>Document ref:</strong>
@@ -48,5 +48,5 @@
   <% end %>
 </p>
 
-<%= link_to 'Edit', edit_record_path(@record) %> |
-<%= link_to 'Back', records_path %>
+<%= link_to 'Edit', edit_record_path(@record), class: "text-info" %> |
+<%= link_to 'Back', records_path, class: "text-info" %>
