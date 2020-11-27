@@ -1,10 +1,15 @@
 class RecordsController < ApplicationController
   before_action :set_record, only: [:show, :edit, :update, :destroy]
+  # load_and_authorize_resource
   before_action :authenticate_user!
 
-
   def index
-    @records = Record.all
+    if params[:search].present?
+      @records = Record.all.search_by(search_params)
+      @manual = Manual.find(search_params["manuals"][1])
+    else
+      @records = Record.all
+    end
   end
 
   def show
@@ -49,6 +54,11 @@ class RecordsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_record
       @record = Record.find(params[:id])
+    end
+
+      # Search parameters allowed through
+    def search_params
+      params.require(:search).permit(manuals: [])
     end
 
     # Only allow a list of trusted parameters through.
