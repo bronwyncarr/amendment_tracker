@@ -2,17 +2,17 @@
 
 ## :bulb: Purpose
 
-This app was created to assist a client who was amending manuals and needed a way to keep track of the amendments.
+This app was created to assist a client who was amending airline manuals and needed a way to keep track of the amendments.
 
 ## :clipboard: Brief 
 
-The brief specified the data that was to be tracked about each necessary amendment. The workflow was that an amendments would first be identified, then approved and then incorporated into the manual. The client wanted to find a way to highlight amendments had been approved but not incorporated. Any approved users can make changes but the general public should not be able to access any information.
+The brief requested a way to keep track of necessary amendments and the data that would need to be recorded. The workflow was that an amendments would first be identified, then approved and then incorporated into the manual. The client wanted to find a way to highlight amendments had been approved but not incorporated. Any approved users should be able to make changes but the general public should not be able to access any information.
 
 ## :ship: Deployment
 
 This app is currently deployed at <http://om-amend.herokuapp.com/>. As the information on the production database is sensitive, only users created by admin can log in. 
 
-## :books: Installation and Setup (R10)
+## :books: Installation and Setup
 
 1. Install ruby, I recommend using [asdf.](https://asdf-vm.com/)
 
@@ -41,7 +41,7 @@ This app includes CRUD functionality for information about a record that needs u
 
 After discussions with the client, it was established that this was required for three manuals; hence manuals was created as an entity. This ensures input integrity as the user can select a manual from a dropdown list when adding a new record.
 
-The client wanted anyone in their team to make changes however data not be accessible to anyone outside. Devise was used for authentication and Cancancan for authorisation. All users have default role of 'general' and have full manage privledges for records. An 'admin' role was created and they have the ability to add or delete users through an admin dashboard. There is no way for new users to sign up except by being added by admin. 
+The client wanted anyone in their team to make changes however data not be accessible to anyone outside. A users and a roles entity was created. Devise was used for authentication and Cancancan for authorisation. All users have default role of 'general' and have full ability to manage records. An 'admin' role was created and they have the ability to add or delete users through an admin dashboard. There is no way for new users to sign up except by being added by admin. 
 
 ## :computer: Teck Stack
 
@@ -49,7 +49,7 @@ This app uses:
 - **Ruby on Rails**
 - **PostgreSQL** as the database
 - **Bootstrap** for styling
-- **Simple Form** for form inputs
+- **Simple Form** for form styling
 - **Devise** for authentication
 - **Cancancan** for authorisation
 - **Rails Admin** for admin dashboard to mange users. 
@@ -60,7 +60,7 @@ This app uses:
 
 ## :camera: Screen shots
 
-Information in the production database is sensitive so all pictures displayed are of seeded databse in the development database.
+Information in the production database is sensitive so all pictures displayed are of seeded entries in the development database.
 
 ![ERD](./docs/home.png)
 
