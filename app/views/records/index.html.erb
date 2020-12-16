@@ -2,6 +2,16 @@
 
 <%= link_to 'New Record', new_record_path, class: "btn btn-info" %>
 <br>
+
+<%= form_with(scope: :search, url: records_path, method: 'get', local: true, class: "form-group form-row") do |f| %>
+  <%= f.collection_select :manuals, Manual.all, :id, :name, {}, { multiple: true, class: "form-control col"} %>
+  <%= f.submit 'Search' %>
+<% end %>
+
+<br>
+<% if @manual.present? %>
+  <p>Showing results only for <%= @manual.name %>. Would you like to <%= link_to 'View all', records_path %>?</p>
+<% end %>
 <br>
 <table class="table">
   <thead class="thead-light">
